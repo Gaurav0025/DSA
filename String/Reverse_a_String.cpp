@@ -18,11 +18,12 @@ using namespace std;
 //     return 0;
 // }
 
-//  with the help of while loop
+
 
 
 
 //  very easiest approch for me for reverse a string with the help of recursive function.
+
 // void reverse_a_string(string &str){
 //     reverse(str.begin(),str.end());
 // }
@@ -32,11 +33,29 @@ using namespace std;
 //     cout<<str<<endl;
 //     return 0;
 // }
+// int main(){
+//     string str="WELCOME";
+//     reverse(str.begin(),str.end());
+//     cout<<str;
+//     return 0;
+// }
 
 
+//  reverse the string using stack
+void reverseByStack(string &str){
+    stack<char> st;    // stack creation
+    //  for loop ki help s sabhi characters ko one by one stack m daldia 
+    for(int i=0;i<str.length();i++){
+        st.push(str[i]);
+    }
+    for(int i=0;i<str.length();i++){
+        str[i] = st.top();
+        st.pop(); 
+    }
+}
 int main(){
-    string str="WELCOME";
-    reverse(str.begin(),str.end());
-    cout<<str;
+    string str = "gaurav";
+    reverseByStack(str);
+    cout<< "Reversed String : " << str;
     return 0;
 }
